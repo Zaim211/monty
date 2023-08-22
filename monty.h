@@ -40,5 +40,7 @@ void pint(stack_t **stack, unsigned int line_number);
 int find_opcode(stack_t **stack, char *opcode, int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 size_t mat(stack_t *h);
+unsigned int len(stack_t **stack);
+void free_stack(stack_t *stack);
 
 #endif

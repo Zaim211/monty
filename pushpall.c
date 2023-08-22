@@ -18,22 +18,22 @@ void push(stack_t **stack, char *i, unsigned int line_number)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	if (n == NULL)
+	if (i == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	for (i = 0; n[i]; i++)
+	for (j = 0; i[j]; j++)
 	{
-		if (n[0] == '-' && i == 0)
+		if (i[0] == '-' && j == 0)
 			continue;
-		if (n[i] < 48 || n[i] > 57)
+		if (i[j] < 48 || i[j] > 57)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
-	new->n = atoi(n);
+	new->i = atoi(i);
 	new->prev = NULL;
 	new->next = NULL;
 	if (*stack != NULL)

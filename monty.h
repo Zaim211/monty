@@ -1,10 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 
+#define DELIMITER "\n\t\r "
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,12 +40,12 @@ typedef struct instruction_s
 
 void nop(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
-void push(stack_t **stack, char *op, unsigned int line_number);
+void push(stack_t **stack, char *n, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 int find_opcode(stack_t **stack, char *opcode, int line_number);
 void swap(stack_t **stack, unsigned int line_number);
-size_t mat(stack_t *h);
+size_t lol(stack_t *h);
 unsigned int len(stack_t **stack);
 void free_stack(stack_t *stack);
 

@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-
 #define DELIMITER "\n\t\r "
 
 /**
@@ -45,7 +44,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 int find_opcode(stack_t **stack, char *opcode, int line_number);
 void swap(stack_t **stack, unsigned int line_number);
-size_t lol(stack_t *h);
+size_t mat(stack_t *h);
 unsigned int len(stack_t **stack);
 void free_stack(stack_t *stack);
 

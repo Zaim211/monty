@@ -40,7 +40,7 @@ int main(__attribute__((unused)) int argc, char const *argv[])
 {
 	FILE *x;
 	char *buff = NULL, *opcode, *n;
-	size_t lol = 0;
+	size_t mat = 0;
 	int line_number = 0;
 	stack_t *stack = NULL, *current;
 
@@ -55,7 +55,7 @@ int main(__attribute__((unused)) int argc, char const *argv[])
 		fprintf(stderr, "Error: can't open file %s\n", argv[1]);
 		exit(1);
 	}
-	while ((getline(&buff, &lol, x)) != -1)
+	while ((getline(&buff, &mat, x)) != -1)
 	{
 		line_number++;
 		opcode = strtok(buff, DELIMITER);

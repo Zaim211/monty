@@ -10,17 +10,17 @@
 int find_opcode(stack_t **stack, char *opcode, int line_number)
 {
 	instruction_t opcodes[] = {
-		{"pall", op_pall},
-		{"pop", op_pop},
-		{"swap", op_swap},
-		{"pint", op_pint},
+		{"pall", pall},
+		{"pop", pop},
+		{"swap", swap},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	int j;
 
 	for (j = 0; opcodes[j].opcode; j++)
 	{
-		if (strcmp(opcode, opcodes[i].opcode) == 0)
+		if (strcmp(opcode, opcodes[j].opcode) == 0)
 		{
 			(opcodes[j].f)(stack, line_number);
 			return (EXIT_SUCCESS);
@@ -66,13 +66,13 @@ int main(__attribute__((unused)) int argc, char const *argv[])
 		else if (!strcmp(opcode, "push"))
 		{
 			y = strtok(NULL, DELIMITER);
-			op_push(&stack, y, line_number);
+			push(&stack, y, line_number);
 		}
 		else
 			find_opcode(&stack, opcode, line_number);
 	}
 	fclose(x);
-	free(buff);
+	free(buf);
 	while (stack != NULL)
 	{
 		current = stack;

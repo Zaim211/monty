@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * push - add element on top of stack
+ * operation_push - add element on top of stack
  * @stack: pointer to a pointer to the doubly linked list
  * @line_number: line where there is an error
  * @n: op_code
  * Return: void
 */
-void push(stack_t **stack, char *n, unsigned int line_number)
+void operation_push(stack_t **stack, char *n, unsigned int line_number)
 {
 	stack_t *new = NULL;
 	int j;
@@ -44,12 +44,12 @@ void push(stack_t **stack, char *n, unsigned int line_number)
 	*stack = new;
 }
 /**
- * pall - print stack's elements
+ * operation_pall - print stack's elements
  * @line_number: will not be used , we usse attribute not void
  * @stack: pointer to the head of the doubly linked list
  * Return: void
 */
-void pall(stack_t **stack, unsigned int line_number)
+void operation_pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 {
 	stack_t *current = *stack;
 

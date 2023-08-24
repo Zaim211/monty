@@ -51,15 +51,48 @@ void push(stack_t **stack, char *n, unsigned int line_number)
 */
 void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 {
-	stack_t *current = *stack;
+	stack_t *current;
+	(void)line_number;
 
-	if (stack == NULL || *stack == NULL)
+	current = *stack;
+	if (stack == NULL)
 		return;
-	while (current != NULL)
+	while (current)
 	{
 		printf("%d\n", current->n);
 		current = current->next;
 	}
+}
+/**
+ * add - adds the top two elements of the stack
+ * @stack: stack head
+ * @line_number: count line_number
+ * Return: no return
+ **/
+void add(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current;
+	int len = 0, y;
+	
+	current = *stack;
+	while (current)
+	{
+		current = current->next;
+		len++;
+	}
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	current = *stack;
+	y = current->n + current->next->n;
+	current->next->n = y;
+	*stack = current->next;
+	free(current);
 }
 
 /**

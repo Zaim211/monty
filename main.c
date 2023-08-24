@@ -14,6 +14,7 @@ int find_opcode(stack_t **stack, char *opcode, int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"pint", pint},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int i;
@@ -38,7 +39,7 @@ int find_opcode(stack_t **stack, char *opcode, int line_number)
  **/
 int main(__attribute__((unused)) int argc, char const *argv[])
 {
-	FILE *x;
+	FILE *mf;
 	char *buff = NULL, *opcode, *n;
 	size_t mat = 0;
 	int line_number = 0;
@@ -49,13 +50,13 @@ int main(__attribute__((unused)) int argc, char const *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
-	x = fopen(argv[1], "r");
-	if (x == NULL)
+	mf = fopen(argv[1], "r");
+	if (mf == NULL)
 	{
 		fprintf(stderr, "Error: can't open file %s\n", argv[1]);
 		exit(1);
 	}
-	while ((getline(&buff, &mat, x)) != -1)
+	while ((getline(&buff, &mat, mf)) != -1)
 	{
 		line_number++;
 		opcode = strtok(buff, DELIMITER);

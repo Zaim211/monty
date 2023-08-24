@@ -2,9 +2,11 @@
 
 /**
  * free_stack - frees a stack
+ *
  * @stack: the stack
+ *
  * Return: void
- **/
+**/
 void free_stack(stack_t *stack)
 {
 	stack_t *next;
@@ -18,10 +20,12 @@ void free_stack(stack_t *stack)
 }
 
 /**
- * len - length of stack
- * @stack: pointer that point to stack
- * Return: unsigned int
- **/
+* len - length of stack
+*
+* @stack: pointer that point to stack
+*
+* Return: unsigned int
+**/
 unsigned int len(stack_t **stack)
 {
 	stack_t *current;

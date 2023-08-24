@@ -37,6 +37,14 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+* struct global_t - global variables
+* @r: return value
+* @m: mode of list
+* @c: code command
+* @p: push command
+**/
+
 extern instruction_t opcodes[];
 void nop(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);

@@ -64,7 +64,7 @@ void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 
 /**
  * nop - do nothing
- * @stack: pointer to to pointer to the doubly linked list
+ * @stack: pointer to pointer to the doubly linked list
  * @line_number: number of lines in the file
  * Return: void
  */

@@ -72,7 +72,7 @@ int main(__attribute__((unused)) int argc, char const *argv[])
 		else
 			find_opcode(&stack, opcode, line_number);
 	}
-	fclose(x);
+	fclose(mf);
 	free(buff);
 	while (stack != NULL)
 	{

@@ -68,7 +68,7 @@ void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
  * @line_number: number of lines in the file
  * Return: void
  */
-void nop(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 {
 	(void) stack;
 	(void) line_number;

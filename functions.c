@@ -25,13 +25,13 @@ void free_stack(stack_t *stack)
 unsigned int len(stack_t **stack)
 {
 	stack_t *current;
-	unsigned int lent = 0;
+	unsigned int l = 0;
 
 	current = *stack;
 	while (current)
 	{
 		current = current->next;
-		lent++;
+		l++;
 	}
-	return (lent);
+	return (l);
 }

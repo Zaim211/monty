@@ -49,15 +49,13 @@ void push(stack_t **stack, char *n, unsigned int line_number)
  * @stack: pointer to the head of the doubly linked list
  * Return: void
 */
-void pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
+void op_pall(stack_t **stack, unsigned int __attribute__((unused)) line_number)
 {
-	stack_t *current;
-	(void)line_number;
+	stack_t *current = *stack;
 
-	current = *stack;
-	if (stack == NULL)
+	if (stack == NULL || *stack == NULL)
 		return;
-	while (current)
+	while (current != NULL)
 	{
 		printf("%d\n", current->n);
 		current = current->next;

@@ -98,7 +98,7 @@ void pint(stack_t **stack, unsigned int __attribute__((unused)) line_number)
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *to_the_end;
+	stack_t *h;
 
 	if (stack == NULL)
 	{
@@ -112,8 +112,8 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		to_the_end = *stack;
+		h = *stack;
 		*stack = (*stack)->next;
-		free(to_the_end);
+		free(h);
 	}
 }

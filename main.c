@@ -16,13 +16,13 @@ int find_opcode(stack_t **stack, char *opcode, int line_number)
 		{"pint", pint},
 		{NULL, NULL}
 	};
-	int j;
+	int i;
 
-	for (j = 0; opcodes[j].opcode; j++)
+	for (i = 0; opcodes[i].opcode; i++)
 	{
-		if (strcmp(opcode, opcodes[j].opcode) == 0)
+		if (strcmp(opcode, opcodes[i].opcode) == 0)
 		{
-			(opcodes[j].f)(stack, line_number);
+			(opcodes[i].f)(stack, line_number);
 			return (EXIT_SUCCESS);
 		}
 	}

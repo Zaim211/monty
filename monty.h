@@ -38,14 +38,15 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
-* struct global_t - global variables
-* @r: return value
-* @m: mode of list
-* @c: code command
-* @p: push command
-**/
-
+ * struct global_t - global variables
+ * @r: return value
+ * @m: mode of list
+ * @c: code command
+ * @p: push command
+ **/
 extern instruction_t opcodes[];
+unsigned int len(stack_t **stack);
+void free_stack(stack_t *stack);
 void nop(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, char *n, unsigned int line_number);
@@ -53,8 +54,5 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 int find_opcode(stack_t **stack, char *opcode, int line_number);
 void swap(stack_t **stack, unsigned int line_number);
-size_t mat(stack_t *h);
-unsigned int len(stack_t **stack);
-void free_stack(stack_t *stack);
-
+size_t lol(stack_t *h);
 #endif

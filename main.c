@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * find_opcode - find operation code
  * @stack: stack pointer
@@ -30,7 +29,6 @@ int find_opcode(stack_t **stack, char *opcode, int line_number)
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }
-
 /**
  * main - main function
  * @argc: number of command line arguments

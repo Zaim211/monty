@@ -1,19 +1,18 @@
 #include "monty.h"
 /**
- * find_opcode - find operation code
- * @stack: stack pointer
- * @opcode: user input opcode
- * @line_number: line number
- * Return: Always 1 (Success) or stderr
- **/
+* find_opcode - find operation code
+* @stack: stack pointer
+* @opcode: user input opcode
+* @line_number: line number
+* Return: Always 1 (Success) or stderr
+**/
 int find_opcode(stack_t **stack, char *opcode, int line_number)
 {
 	instruction_t opcodes[] = {
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"nop", nop},
+		{"pall", op_pall},
+		{"pop", op_pop},
+		{"swap", op_swap},
+		{"pint", op_pint},
 		{NULL, NULL}
 	};
 	int i;
@@ -30,11 +29,11 @@ int find_opcode(stack_t **stack, char *opcode, int line_number)
 	exit(EXIT_FAILURE);
 }
 /**
- * main - main function
- * @argc: number of command line arguments
- * @argv: list of command line arguments
- * Return: EXIT_SUCCESS if no errors or EXIT_FAILURE
- **/
+* main - main function
+* @argc: number of command line arguments
+* @argv: list of command line arguments
+* Return: EXIT_SUCCESS if no errors or EXIT_FAILURE
+**/
 int main(__attribute__((unused)) int argc, char const *argv[])
 {
 	FILE *mf;
@@ -65,7 +64,7 @@ int main(__attribute__((unused)) int argc, char const *argv[])
 		else if (!strcmp(opcode, "push"))
 		{
 			n = strtok(NULL, DELIMITER);
-			push(&stack, n, line_number);
+			op_push(&stack, n, line_number);
 		}
 		else
 			find_opcode(&stack, opcode, line_number);
